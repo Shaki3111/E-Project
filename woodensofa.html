@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="main.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>furnicom</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --main-color: #207178;
+        }
+
+        header {
+            width: 100%;
+            height: 80px;
+            background-image: url(images/bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 13px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1111;
+            transition: .5s ease-in-out;
+        }
+
+        header .logo a {
+            font-size: 0px;
+            text-decoration: none;
+            text-transform: capitalize;
+            color: #000000;
+            font-family: 'Fenix', serif;
+        }
+
+        header .logo img {
+            width: 100px;
+            margin-top: -5px;
+        }
+
+        header ul {
+            display: flex;
+            margin: 0;
+
+        }
+
+        header ul li {
+            margin: 0px 15px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            display: block;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 4s;
+
+        }
+
+        header ul li a:hover {
+            color: var(--main-color);
+        }
+
+        header .bars {
+            display: none;
+        }
+
+        header .bars img {
+            width: 30px;
+
+        }
+
+        header.active {
+            background: #ffffff;
+            box-shadow: 1px 0px 0px #000000;
+
+        }
+
+        header.active .logo a {
+            color: var(--main-color);
+        }
+
+        header.active ul li a {
+            color: var(--main-color);
+            font-weight: 600;
+        }
+
+        header.active .bars img {
+            padding: 4px 5px;
+            columns: var(--main-color);
+            background-color: var(--main-color);
+            width: 33px;
+        }
+
+        @media(max-width:991px) {
+            header .navigation {
+                position: absolute;
+                top: 75px;
+                right: -50%;
+                width: 50%;
+                height: 100vh;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                transition: .5s ease-in-out;
+                box-shadow: -1px 0px 0px #ddd;
+            }
+
+            header .navigation li {
+                margin: 11px 0px;
+            }
+
+            header .navigation li a {
+                color: var(--main-color);
+            }
+
+            header .bars {
+                display: block;
+            }
+        }
+
+
+        .card-section {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+
+
+        }
+
+        span {
+            margin-left: 70px;
+            color: red;
+            font-weight: 300px;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            padding-left: 20px;
+            padding-top: 20px;
+            font-family: serif;
+            font-weight: bold;
+            margin-left: 40px;
+        }
+
+        p {
+            padding-left: 20px;
+        }
+
+        .card:hover {
+            border: 1px solid black;
+            transform: scale(1.1);
+            transition: ease-in-out;
+
+        }
+
+        h5 {
+            font-weight: bolder;
+            margin-left: 25px;
+        }
+
+        .para {
+            margin-left: 5px;
+            font-size: 15px;
+        }
+        #pp{
+            margin-left: 50px;
+        }
+
+
+        .footer {
+    background-color: #1e3d40;
+    color: #fff;
+    padding: 50px 0 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 230px;
+}
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+    color: var(--main-color);
+}
+.social-icons a {
+    font-size: 18px;
+    color: #ddd;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: var(--main-color);
+}
+.footer hr {
+    border-color: #444;
+    margin: 30px 0 15px;
+}
+.footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="#"><img id="Furni" src="images/Furnicom.png" alt="">Furni</a>
+        </div>
+        <ul class="navigation">
+            <li><a href="Home.html" class="active">home</a></li>
+            <li><a href="Home.html">furniture</a></li>
+            <li><a href="New_Arrival.html">new arrival</a></li>
+            <li><a href="AboutUs.html">about</a></li>
+            <li><a href="ContactUs.html">contact</a></li>
+        </ul>
+        <div class="bars">
+            <img id="bar" src="images/menu.png" alt="">
+        </div>
+    </header>
+    <br>
+    <br><br><br>
+
+    <h1>Wooden Sofa</h1>
+    <div id="pp">
+        <p>Discover the timeless beauty of wooden sofa designs at our store. From modern to traditional, find the
+            perfect
+            sofa design in wood to elevate your living room. Shop our collection now.</p>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Ach Sofa Design in Wood – A Perfect Balance.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text"> Ach Sofa Design in Wood – A Perfect Balance.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs49,999
+                    </span>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Elga Sofa – Elegant Sofa Design of Wood.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text"> Elga Sofa – Elegant Sofa Design of Wood.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs59,999
+                    </span>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Gich Sofa – Luxury Sofa Design of Wood.webp" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <p class="card-text">Gich Sofa – Luxury Sofa Design of Wood.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs49,999
+                    </span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Kich Sofa Design of Wood – Perfect for Relaxing.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">Kich Sofa Design of Wood – Perfect for Relaxing.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs64,999
+                    </span>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Nar Sofa Design of Wood – Stylish & Comfortable.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">Nar Sofa Design of Wood – Stylish & Comfortable.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs59,999
+                    </span>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Pala Sofa – Stylish Sofa Design of Wood.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Pala Sofa – Stylish Sofa Design of Wood.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs99,500
+                    </span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Pint Sofa Design of wood – Comfort & Style for Your Home.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text">Pint Sofa Design of wood – Comfort & Style for Your Home.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs54,999
+                    </span>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Rita Sofa Design of Wood – Comfortable & Durable.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <p class="card-text"> Rita Sofa Design of Wood – Comfortable & Durable.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs39,999
+                    </span>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Wooden Sofa/Tiga Sofa – Beautiful Sofa Design of Wood.webp"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Tiga Sofa – Beautiful Sofa Design of Wood</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                    <span>
+                        Rs69,999
+                    </span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <div class="container">
+        <div class="para">
+            <p>
+                Are you looking to add a touch of elegance to your living room? Look no further than a wooden sofa set.
+                A
+                classic choice that never goes out of style, wooden sofas are not only durable but also offer a warm and
+                inviting feel to any space. In this article, we will explore the beauty of wooden sofa sets and why they
+                are a
+                popular choice for homeowners in Pakistan.
+            </p>
+        </div>
+
+        <div class="para">
+            <p>
+                When it comes to furnishing your home, investing in a high-quality sofa set is a must. Not only does it
+                serve as
+                a comfortable place to lounge and entertain guests, but it also ties the entire room together. Wooden
+                sofa sets
+                have been a go-to choice for homeowners in Pakistan for many years due to their durability, elegance,
+                and
+                affordability. In this article, we will explore the many benefits of a wooden sofa set and why you
+                should
+                consider one for your home.
+            </p>
+        </div>
+        <h5>
+            The Beauty of Wooden Sofa Sets in Pakistan
+        </h5>
+        <div class="para">
+            <p>
+                When it comes to furniture in Pakistan, wooden sofa sets are a popular choice due to their natural
+                beauty and
+                timeless appeal. Here are some reasons why wooden sofa sets are a great investment for your home:
+            </p>
+        </div>
+        <h5>
+            Durable and Long-Lasting
+        </h5>
+        <div class="para">
+            <p>
+                One of the most significant benefits of a wooden sofa set is its durability. Wood is a sturdy and robust
+                material that can withstand daily wear and tear, making it an excellent investment for your home. Unlike
+                other
+                materials like fabric or leather, wooden sofa sets don't require frequent replacements or maintenance.
+                With
+                proper care, a high-quality wooden sofa set can last for many years, making it an excellent investment
+                for any
+                homeowner in Pakistan.
+            </p>
+        </div>
+        <h5>
+            Quality of Wood
+        </h5>
+        <div class="para">
+            <p>
+                The quality of wood used in your sofa set will directly impact its durability and longevity. When
+                shopping for a
+                wooden sofa set, be sure to choose one made from high-quality wood, such as Indian Rosewood (Sheesham),
+                teak.
+                These woods are known for their strength and durability and can withstand daily use without wearing down
+                or
+                breaking.
+            </p>
+        </div>
+        <h5>
+            Comfort
+        </h5>
+        <div class="para">
+            <p>
+                While the durability and design of your wooden sofa set are essential, don't forget about comfort. Be
+                sure to
+                test out different models and styles to find one that fits your body and feels comfortable. Look for
+                sofa sets
+                with high-density foam cushions that offer support and comfort.
+            </p>
+        </div>
+        <h5>
+            Price
+        </h5>
+        <div class="para">
+            <p>
+                Finally, consider the price of your wooden sofa set. While wooden sofa sets can be a bit more expensive
+                than
+                other materials like fabric or leather, they are a worthwhile investment due to their longevity and
+                durability.
+                Look for a sofa set that fits your budget but also offers high-quality wood and comfortable cushions.
+            </p>
+        </div>
+        <h5>
+            Conclusion
+        </h5>
+        <div class="para">
+            <p>
+                A wooden sofa set is a classic and elegant choice for any living room in Pakistan. With its natural
+                beauty,
+                durability, and versatility, a wooden sofa set is a worthwhile investment for any homeowner. When
+                shopping for a
+                wooden sofa set, be sure to consider the quality of wood, comfort, and price.
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+            <div class="footer-col logo-col">
+                <img src="images/Furnicom1.png" alt="Furni Logo" class="footer-logo">
+                <p>Elegant and comfortable furniture to style your home and office. Designed with care, built to last.</p>
+            </div>
+            <div class="footer-col link-col">
+                <h4>Quick Links</h4>
+                <ul>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li><a href="New_Arrival.html">New_Arrival</a></li>
+                <li><a href="#furniture">furniture</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; 2025 Furni. All rights reserved.</p>
+        </div>
+        </footer>
+
+
+
+
+
+
+
+    <script>
+
+        function myNav() {
+            let bar = document.getElementById("bar");
+            let nav = document.querySelector(".navigation");
+            bar.onclick = () => {
+                if (nav.style.right == "0%") {
+                    nav.style.right = "-50%";
+                    bar.src = "images/menu.png"
+                } else {
+                    nav.style.right = "0%";
+                    bar.src = "images/x.png"
+                }
+            }
+        }
+        myNav();
+
+        function myHeader() {
+            let header = document.getElementById("header");
+            let Furni = document.getElementById("Furni")
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 0) {
+                    header.classList.add("active")
+                    Furni.src = "images/Furnicom1.png"
+                } else {
+                    header.classList.remove("active")
+                    Furni.src = "images/Furnicom.png"
+                }
+            })
+        }
+        myHeader()
+
+
+
+
+    </script>
+</body>
+
+</html>

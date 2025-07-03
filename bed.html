@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="main.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Furnicom</title>
+    <style>
+         *{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    --main-color: #207178;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 13px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1111;
+    transition: .5s ease-in-out;
+}
+
+header .logo a{
+    font-size: 0px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000000;
+    font-family: 'Fenix', serif;
+}
+header .logo img{
+    width: 100px;
+    margin-top: -5px;
+}
+
+header ul{
+    display: flex;
+    margin: 0;
+
+}
+header ul li{
+    margin: 0px 15px;
+}
+header ul li a{
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 4s;
+    
+}
+header ul li a:hover{
+    color: var(--main-color);
+}
+header .bars{
+    display: none;
+}
+header .bars img{
+    width: 30px;
+
+}
+header.active{
+    background: #ffffff;
+    box-shadow: 1px 0px 0px #000000;
+
+}
+header.active .logo a{
+    color: var(--main-color);
+}
+header.active ul li a{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+header.active .bars img{
+    padding: 4px 5px;
+    columns: var(--main-color);
+    background-color: var(--main-color);
+    width: 33px;
+}
+
+@media(max-width:991px){
+    header .navigation{
+        position: absolute;
+        top: 75px;
+        right: -50%;
+        width: 50%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+      
+    }
+    header .navigation li{
+        margin: 11px 0px;
+    }
+    header .navigation li a{
+        color: var(--main-color);
+    }
+    header .bars{
+        display: block;
+    }
+}
+
+.card-section{
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            justify-content:center;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+         
+
+        }
+        span{
+            margin-left: 70px;
+            color: red;
+            font-weight: 300px;
+            font-family:sans-serif;
+        }
+        h1 {
+            padding-left: 20px;
+            padding-top: 20px;
+            font-family: serif;
+            font-weight: bold;
+            margin-left: 40px;
+        }
+
+        p {
+            padding-left: 20px;
+        }
+
+        .card:hover {
+            border: 1px solid black;
+            transform: scale(1.1);
+            transition: ease-in-out;
+
+        }
+
+        h5 {
+            font-weight: bolder;
+            margin-left: 25px;
+        }
+
+        .para {
+            margin-left: 5px;
+            font-size: 15px;
+        }
+        #pp{
+            margin-left: 40px;
+        }
+        
+
+
+
+        .footer {
+    background-color: #1e3d40;
+    color: #fff;
+    padding: 50px 0 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 230px;
+}
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+    color: var(--main-color);
+}
+.social-icons a {
+    font-size: 18px;
+    color: #ddd;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: var(--main-color);
+}
+.footer hr {
+    border-color: #444;
+    margin: 30px 0 15px;
+}
+.footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
+
+   
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="#"><img id="Furni" src="images/Furnicom.png" alt="">Furni</a>
+        </div>
+        <ul class="navigation">
+            <li><a href="Home.html" class="active">home</a></li>
+            <li><a href="Home.html">furniture</a></li>
+            <li><a href="New_Arrival.html">new arrival</a></li>
+            <li><a href="AboutUs.html">about</a></li>
+            <li><a href="ContactUs.html">contact</a></li>
+        </ul>
+        <div class="bars">
+            <img id="bar" src="images/menu.png" alt="">
+        </div>
+    </header>
+
+<br>
+<br>
+<br>
+<br>
+    <h1>Bed</h1>
+    <div id="pp">
+        <p>Shop our wide selection of comfortable and stylish bed designs in Pakistan. From traditional to modern bed designs, we have the perfect bed to fit any bedroom.</p>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Akil Bed Design – The Ultimate Sleep Solution.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <p class="card-text">Akil Bed Design – The Ultimate Sleep Solution.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs109,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Beam Bed Design – Sleep in Style with Our Designer Bed.webp" alt="...">
+                <div class="card-body">
+                 
+                  <p class="card-text"> Beam Bed Design – Sleep in Style with Our Designer Bed.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs119,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Bike Bed Design – Perfect Night’s Sleep.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+               <p class="card-text">Bike Bed Design – Perfect Night’s Sleep.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs149,999
+                  </span>
+                </div>
+              </div>
+        </article>
+    </section>
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Chin Bed – Trendy and Modern Bed Design.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <p class="card-text">Chin Bed – Trendy and Modern Bed Design.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs164,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Cuko Bed Design – That Will Make Your Bedroom Look Amazing.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                 
+                  <p class="card-text">Cuko Bed Design – That Will Make Your Bedroom Look Amazing.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs109,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Emi Bed Design – Achieve a Better Sleep.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+               <p class="card-text">Emi Bed Design – Achieve a Better Sleep</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs105,000
+                  </span>
+                </div>
+              </div>
+        </article>
+    </section>
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Erna Bed Design – Add a Touch of Luxury to Your Bedroom.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <p class="card-text">Erna Bed Design – Add a Touch of Luxury to Your Bedroom</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs111,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Fara Bed Design – Intricately Designed Pakistani Bed.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                 
+                  <p class="card-text">Fara Bed Design – Intricately Designed Pakistani Bed.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs100,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Bed/Qin Bed Design – Beds Built for Comfort and Durability.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+               <p class="card-text">Qin Bed Design – Beds Built for Comfort and Durability</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs119,000
+                  </span>
+                </div>
+              </div>
+        </article>
+    </section>
+    <div class="container">
+        <h5>Bedroom Set: Complete Your Bedroom with These Must-Have Pieces of Furniture</h5>
+        <div class="para">
+            <p>
+                When it comes to creating a cozy and comfortable bedroom, having the right furniture is essential. In this article, we will discuss the must-have furniture pieces for your bedroom, including a bed, dressing table, and wardrobe. Whether you are moving into a new place or simply looking to refresh your current bedroom, these pieces will help you create a functional and stylish space.
+            </p>
+        </div>
+        <h5>The Bed: The Centerpiece of Your Bedroom</h5>
+        <div class="para">
+            <p>
+                The bed is undoubtedly the most important piece of furniture in any bedroom set. It is where you will spend a significant portion of your time, so it is important to choose a comfortable and supportive option. At our online furniture store, we offer a wide range of beds in various sizes and styles to suit your needs.
+            </p>
+        </div>
+        <h5>
+            Choosing the Right Size
+        </h5>
+        <div class="para">
+            <p>
+                When selecting a bed, it is crucial to consider the size of your room and your personal sleeping habits. If you have a small room, a twin or full-size bed may be the best option. However, if you have a larger space, a queen or king-size bed can offer more room to stretch out.
+            </p>
+        </div>
+        <h5>
+            Selecting the Style
+        </h5>
+        <div class="para">
+            <p>
+                Bedroom furniture should not only be functional but also aesthetically pleasing. At our online furniture store, we offer a variety of bed styles, from traditional to modern, to fit any design scheme. Choose from options like platform beds, upholstered beds, and canopy beds to make a statement in your bedroom.
+            </p>
+        </div>
+        <h5>
+            The Dressing Table: Get Ready in Style
+        </h5>
+        <div class="para">
+            <p>
+                A dressing table is a versatile piece of furniture that can be used for both storage and beauty routines. It is a great addition to any bedroom, providing a dedicated space for makeup, jewelry, and hair accessories.
+            </p>
+        </div>
+        <h5>
+            Choosing the Right Size and Style
+        </h5>
+        <div class="para">
+            <p>
+                When selecting a dressing table, consider the size of your room and the amount of storage you need. A larger table with drawers can offer more storage space, while a smaller table can be a great option for those with limited space. Our online furniture store offers dressing tables in a variety of styles, including classic and modern designs to fit your personal taste.
+            </p>
+        </div>
+        <h5>
+            The Wardrobe: Organize Your Clothes with Ease
+        </h5>
+        <div class="para">
+            <p>
+                A wardrobe is a must-have piece of furniture for any bedroom, providing ample space to store clothing and accessories. It is an essential piece that keeps your room tidy and organized.
+            </p>
+        </div>
+        <h5>
+            Conclusion
+        </h5>
+        <div class="para">
+            <p>
+                In conclusion, creating a cozy and comfortable bedroom is easy when you have the right furniture pieces. A comfortable bed, a stylish dressing table, and a functional wardrobe are must-have items that will help you achieve the bedroom of your dreams. At our online furniture store, we offer a variety of options to fit any taste and budget. Start shopping today and make your bedroom the most relaxing and comfortable space in your home.
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+            <div class="footer-col logo-col">
+                <img src="images/Furnicom1.png" alt="Furni Logo" class="footer-logo">
+                <p>Elegant and comfortable furniture to style your home and office. Designed with care, built to last.</p>
+            </div>
+            <div class="footer-col link-col">
+                <h4>Quick Links</h4>
+                <ul>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li><a href="New_Arrival.html">New_Arrival</a></li>
+                <li><a href="#furniture">furniture</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; 2025 Furni. All rights reserved.</p>
+        </div>
+        </footer>
+
+
+
+
+
+  
+
+
+
+    
+<script>
+
+function myNav(){
+            let bar = document.getElementById("bar");
+            let nav = document.querySelector(".navigation")
+            bar.onclick = ()=>{
+                if(nav.style.right == "0%") {
+                    nav.style.right = "-50%";
+                    bar.src = "images/menu.png"
+                } else{
+                    nav.style.right = "0%";
+                    bar.src = "images/x.png"
+                }
+            }
+        }
+        myNav();
+
+        function myHeader(){
+            let header = document.getElementById("header");
+            let Furni = document.getElementById("Furni")
+            window.addEventListener("scroll",function(){
+                if (window.scrollY > 0){
+                    header.classList.add("active")
+                    Furni.src = "images/Furnicom1.png"
+                }else{
+                    header.classList.remove("active")
+                    Furni.src = "images/Furnicom.png"
+                }
+            })
+        }
+        myHeader()
+
+
+
+   
+    </script>
+</body>
+</html>

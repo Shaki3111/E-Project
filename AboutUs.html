@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furnicom</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="main.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    :root {
+      --main-color: #207178;
+    }
+    header {
+      width: 100%;
+      height: 80px;
+      background-image: url(images/bg.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 13px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1111;
+      transition: .5s ease-in-out;
+    }
+    header .logo a {
+      font-size: 0px;
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #000000;
+      font-family: 'Fenix', serif;
+    }
+    header .logo img {
+      width: 100px;
+      margin-top: -5px;
+    }
+    header ul {
+      display: flex;
+      margin: 0;
+    }
+    header ul li {
+      margin: 0px 15px;
+    }
+    header ul li a {
+      text-decoration: none;
+      display: block;
+      color: #fff;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+    header ul li a:hover {
+      color: var(--main-color);
+    }
+    header .bars {
+      display: none;
+    }
+    header .bars img {
+      width: 30px;
+    }
+    header.active {
+      background: #ffffff;
+      box-shadow: 1px 0px 0px #000000;
+    }
+    header.active .logo a {
+      color: var(--main-color);
+    }
+    header.active ul li a {
+      color: var(--main-color);
+      font-weight: 600;
+    }
+    header.active .bars img {
+      padding: 4px 5px;
+      background-color: var(--main-color);
+      width: 33px;
+    }
+
+    @media(max-width: 991px) {
+      header .navigation {
+        position: absolute;
+        top: 75px;
+        right: -50%;
+        width: 50%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+        box-shadow: -1px 0px 0px #ddd;
+      }
+      header .navigation li {
+        margin: 11px 0px;
+      }
+      header .navigation li a {
+        color: var(--main-color);
+      }
+      header .bars {
+        display: block;
+      }
+    }
+
+    /* About Section */
+    .about-container {
+      padding: 120px 20px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .about-section img {
+      flex: 1 1 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .about-text {
+      flex: 1 1 400px;
+      padding: 30px;
+    }
+    .about-text h2 {
+      color: #207178;
+      margin-bottom: 15px;
+    }
+    .about-text p {
+      font-size: 16px;
+      color: #444;
+    }
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+      }
+      .about-text {
+        padding: 20px;
+      }
+    }
+
+
+
+    .footer {
+    background-color: #1e3d40;
+    color: #fff;
+    padding: 50px 0 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 230px;
+}
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+    color: var(--main-color);
+}
+.social-icons a {
+    font-size: 18px;
+    color: #ddd;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: var(--main-color);
+}
+.footer hr {
+    border-color: #444;
+    margin: 30px 0 15px;
+}
+.footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="logo">
+      <a href="#"><img id="Furni" src="images/Furnicom.png" alt="">Furni</a>
+    </div>
+    <ul class="navigation">
+      <li><a href="Home.html" class="active">home</a></li>
+      <li><a href="Home.html">furniture</a></li>
+      <li><a href="New_Arrival.html">new arrival</a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="ContactUs.html">contact</a></li>
+    </ul>
+    <div class="bars">
+      <img id="bar" src="images/menu.png" alt="">
+    </div>
+  </header>
+
+  <!-- About Us Section -->
+  <div class="about-container">
+    <div class="about-section">
+      <img src="images/about Us 1.jpeg" alt="Modern Furniture" />
+      <div class="about-text">
+        <h2>Our Mission</h2>
+        <p>Furni is dedicated to providing beautifully crafted furniture that balances functionality and style. We believe that great design has the power to transform spaces and enhance comfort in your home.</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="about-text">
+        <h2>Our Craftsmanship</h2>
+        <p>Every item is crafted with premium materials and keen attention to detail. Our experienced artisans and innovative designers come together to deliver high-quality furniture that lasts for years.</p>
+      </div>
+      <img src="images/about Us 2.jpeg" alt="Craftsmanship" />
+    </div>
+
+    <div class="about-section">
+      <img src="images/about Us 3.jpeg" alt="Showroom" />
+      <div class="about-text">
+        <h2>Modern Designs</h2>
+        <p>We offer a wide variety of furniture styles that suit modern, minimalist, and traditional interiors alike. Whether it's a cozy sofa or a sleek dining set, we have something for every space.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+        <div class="footer-col logo-col">
+            <img src="images/Furnicom1.png" alt="Furni Logo" class="footer-logo">
+            <p>Elegant and comfortable furniture to style your home and office. Designed with care, built to last.</p>
+        </div>
+        <div class="footer-col link-col">
+            <h4>Quick Links</h4>
+            <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="ContactUs.html">Contact</a></li>
+            <li><a href="New_Arrival.html">New_Arrival</a></li>
+            <li><a href="#furniture">furniture</a></li>
+            </ul>
+        </div>
+        <div class="footer-col social-col">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        </div>
+        <hr>
+        <p class="copyright">&copy; 2025 Furni. All rights reserved.</p>
+    </div>
+    </footer>
+  <!-- JavaScript -->
+  <script>
+    function myNav() {
+      let bar = document.getElementById("bar");
+      let nav = document.querySelector(".navigation");
+      bar.onclick = () => {
+        if (nav.style.right === "0%") {
+          nav.style.right = "-50%";
+          bar.src = "images/menu.png";
+        } else {
+          nav.style.right = "0%";
+          bar.src = "images/x.png";
+        }
+      };
+    }
+    myNav();
+
+    function myHeader() {
+      let header = document.getElementById("header");
+      let Furni = document.getElementById("Furni");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 0) {
+          header.classList.add("active");
+          Furni.src = "images/Furnicom1.png";
+        } else {
+          header.classList.remove("active");
+          Furni.src = "images/Furnicom.png";
+        }
+      });
+    }
+    myHeader();
+  </script>
+</body>
+</html>

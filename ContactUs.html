@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="main.css">
+    <title>Furnicom</title>
+    <style>
+         *{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    --main-color: #207178;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 13px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1111;
+    transition: .5s ease-in-out;
+}
+
+header .logo a{
+    font-size: 0px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000000;
+    font-family: 'Fenix', serif;
+}
+header .logo img{
+    width: 100px;
+    margin-top: -5px;
+}
+
+header ul{
+    display: flex;
+    margin: 0;
+
+}
+header ul li{
+    margin: 0px 15px;
+}
+header ul li a{
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 4s;
+    
+}
+header ul li a:hover{
+    color: var(--main-color);
+}
+header .bars{
+    display: none;
+}
+header .bars img{
+    width: 30px;
+
+}
+header.active{
+    background: #ffffff;
+    box-shadow: 1px 0px 0px #000000;
+
+}
+header.active .logo a{
+    color: var(--main-color);
+}
+header.active ul li a{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+header.active .bars img{
+    padding: 4px 5px;
+    columns: var(--main-color);
+    background-color: var(--main-color);
+    width: 33px;
+}
+
+@media(max-width:991px){
+    header .navigation{
+        position: absolute;
+        top: 75px;
+        right: -50%;
+        width: 50%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+        box-shadow: -1px 0px 0px #ddd;
+    }
+    header .navigation li{
+        margin: 11px 0px;
+    }
+    header .navigation li a{
+        color: var(--main-color);
+    }
+    header .bars{
+        display: block;
+    }
+}
+
+
+
+.ContactUs{
+            position: relative;
+            width: 100%;
+            padding: 40px 100px;
+        }
+        .form{
+            grid-area: form;
+        }
+        .info{
+            grid-area: info;
+        }
+        .map{
+            grid-area: map;
+        }
+        .contact{
+            padding: 40px;
+            background: white;
+            box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+        }
+        .box{
+            position: relative;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 5fr 4fe;
+            grid-template-areas: 
+            "form info"
+            "form map";
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact h3{
+            color: #0e3959;
+            font-weight: 500;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+
+        }
+        /* Form */
+        .formBox{
+            position: relative;
+            width: 100%;
+        }
+        .formBox .row50{
+            display: flex;
+            gap: 20px;
+        }
+        .inputBox{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            width: 50%;
+        }
+        .formBox .row100 .inputBox{
+            width: 100%;
+        }
+
+        .inputBox span{
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: 500;
+
+        }
+        .inputBox input{
+            padding: 10px;
+            font-size: 1.1em;
+            outline: none;
+            border: 1px solid black;
+        }
+        .inputBox textarea{
+            padding: 10px;
+            font-size: 1.1em;
+            outline: none;
+            border: 1px solid black;
+            resize: none;
+            min-height: 220px;
+            margin-bottom: 10px;
+        }
+        .inputBox input[ type="submit"]{
+            /* background: ; */
+            border: none;
+            font-size: 1.1em;
+            max-width: 120px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 14px 15px;
+        }
+       
+/* info */
+       .info .infobox div{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+       } 
+       .info .infobox div span{
+        min-width: 40px;
+        height: 40px;
+        color: white;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1,5em;
+        border-radius: 50%;
+        margin-right: 15px;       
+       }
+       .info .infobox div p{
+        font-size: 1.1em;
+       }
+       .info .infobox div a{
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.1em;
+       }
+
+       .sci{
+        margin-top: 40px;
+        display: flex;
+       }
+       .sci li{
+        list-style: none;
+        margin-right: 15px;
+       }
+       .sci li a{
+        color: black;
+        font-size: 2em;
+        
+       }
+       .sci li a:hover{
+        color: blue;
+       }
+
+       .map{
+        padding: 0px;
+       }
+       .map iframe{
+        width: 100%;
+        height: 100%;
+       }
+
+       @media (max-width: 991px) {
+  .ContactUs {
+    padding: 20px;
+  }
+  .box {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "form"
+      "info"
+      "map";
+  }
+  .formBox .row50 {
+    flex-direction: column;
+  }
+  .inputBox {
+    width: 100% !important;
+  }
+  .sci {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 20px;
+  }
+  .header .logo img {
+    width: 80px;
+  }
+  .formBox .row50 {
+    gap: 10px;
+  }
+  
+  .inputBox input,
+  .inputBox textarea {
+    font-size: 1em;
+  }
+  .contact h3,
+  .info h3 {
+    font-size: 1.2em;
+  }
+  .inputBox input[type="submit"] {
+    width: 100%;
+  }
+  .footer-col {
+    text-align: center;
+  }
+}
+
+
+.footer {
+    background-color: #1e3d40;
+    color: #fff;
+    padding: 50px 0 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 230px;
+}
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+    color: var(--main-color);
+}
+.social-icons a {
+    font-size: 18px;
+    color: #ddd;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: var(--main-color);
+}
+.footer hr {
+    border-color: #444;
+    margin: 30px 0 15px;
+}
+.footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="#"><img id="Furni" src="images/Furnicom.png" alt="">Furni</a>
+        </div>
+        <ul class="navigation">
+            <li><a href="Home.html" class="active">home</a></li>
+            <li><a href="Home.html">furniture</a></li>
+            <li><a href="New_Arrival.html">new arrival</a></li>
+            <li><a href="AboutUs.html">about</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+        <div class="bars">
+            <img id="bar" src="images/menu.png" alt="">
+        </div>
+    </header>
+
+
+<br><br><br><br>
+
+
+    <div class="ContactUs">
+        <!-- <div class="title">
+            <h2>Get in Touch</h2>
+        </div> -->
+        <div class="box">
+            <!-- Form -->
+            <div class="contact form">
+                <h3>Send a Message</h3>
+                <form>
+                    <div class="formBox">
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>First Name</span>
+                                <input type="text" placeholder="First Name" required>
+                            </div>
+                            <div class="inputBox">
+                                <span>Last Name</span>
+                                <input type="text" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Email</span>
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                            <div class="inputBox">
+                                <span>Number</span>
+                                <input type="number" placeholder="Number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row100">
+                            <div class="inputBox">
+                                <span>Massage</span>
+                                <textarea placeholder="Write your Message here..."></textarea>
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputBox">
+                               <input type="submit" value="Send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- Info -->
+            <div class="contact info">
+                <h3>Contact Info</h3>
+                <div class="infobox">
+                    <div>
+                        <span><ion-icon name="location"></ion-icon></span>
+                        <p>North Nazimabad Block E <br>karachi Pakistan </p>
+                    </div>
+                    <div>
+                        <span><ion-icon name="mail"></ion-icon></span>
+                        <a href="Mailto:xyz@Email.com">xyz@Email.com</a>
+                    </div>
+                    <div>
+                        <span><ion-icon name="call"></ion-icon></span>
+                        <a href="tel:+914534565644">+91 453 456 5644</a>
+                    </div>
+                    <!-- Social Media link -->
+                    <ul class="sci">
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Map -->
+            <div class="contact map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.8331737970725!2d67.03896552401481!3d24.93775249216294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f8124b91741%3A0x438407a2dcb3ec10!2sBlock%20E%20North%20Nazimabad%20Town%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1736882226219!5m2!1sen!2s"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+            <div class="footer-col logo-col">
+                <img src="images/Furnicom1.png" alt="Furni Logo" class="footer-logo">
+                <p>Elegant and comfortable furniture to style your home and office. Designed with care, built to last.</p>
+            </div>
+            <div class="footer-col link-col">
+                <h4>Quick Links</h4>
+                <ul>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li><a href="New_Arrival.html">New_Arrival</a></li>
+                <li><a href="#furniture">furniture</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; 2025 Furni. All rights reserved.</p>
+        </div>
+        </footer>
+    
+
+
+  
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    
+<script>
+
+    function myNav(){
+        let bar = document.getElementById("bar");
+        let nav = document.querySelector(".navigation");
+        bar.onclick = ()=>{
+            if(nav.style.right == "0%") {
+                nav.style.right = "-50%";
+                bar.src = "images/menu.png"
+            } else{
+                nav.style.right = "0%";
+                bar.src = "images/x.png"
+            }
+        }
+    }
+    myNav();
+
+    function myHeader(){
+        let header = document.getElementById("header");
+        let Furni = document.getElementById("Furni")
+        window.addEventListener("scroll",function(){
+            if (window.scrollY > 0){
+                header.classList.add("active")
+                Furni.src = "images/Furnicom1.png"
+            }else{
+                header.classList.remove("active")
+                Furni.src = "images/Furnicom.png"
+            }
+        })
+    }
+    myHeader()
+
+
+   
+    </script>
+</body>
+</html>

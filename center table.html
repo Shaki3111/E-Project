@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="main.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Furnicom</title>
+    <style>
+         *{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    --main-color: #207178;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 13px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1111;
+    transition: .5s ease-in-out;
+}
+
+header .logo a{
+    font-size: 0px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #000000;
+    font-family: 'Fenix', serif;
+}
+header .logo img{
+    width: 100px;
+    margin-top: -5px;
+}
+
+header ul{
+    display: flex;
+    margin: 0;
+
+}
+header ul li{
+    margin: 0px 15px;
+}
+header ul li a{
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 4s;
+    
+}
+header ul li a:hover{
+    color: var(--main-color);
+}
+header .bars{
+    display: none;
+}
+header .bars img{
+    width: 30px;
+
+}
+header.active{
+    background: #ffffff;
+    box-shadow: 1px 0px 0px #000000;
+
+}
+header.active .logo a{
+    color: var(--main-color);
+}
+header.active ul li a{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+header.active .bars img{
+    padding: 4px 5px;
+    columns: var(--main-color);
+    background-color: var(--main-color);
+    width: 33px;
+}
+
+@media(max-width:991px){
+    header .navigation{
+        position: absolute;
+        top: 75px;
+        right: -50%;
+        width: 50%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+        box-shadow: -1px 0px 0px #ddd;
+    }
+    header .navigation li{
+        margin: 11px 0px;
+    }
+    header .navigation li a{
+        color: var(--main-color);
+    }
+    header .bars{
+        display: block;
+    }
+}
+
+
+.card-section{
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            justify-content:center;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+         
+
+        }
+        span{
+            margin-left: 70px;
+            color: red;
+            font-weight: 300px;
+            font-family:sans-serif;
+        }
+        h1 {
+            padding-left: 20px;
+            padding-top: 20px;
+            font-family: serif;
+            font-weight: bold;
+            margin-left: 40px;
+        }
+
+        p {
+            padding-left: 20px;
+        }
+
+        .card:hover {
+            border: 1px solid black;
+            transform: scale(1.1);
+            transition: ease-in-out;
+
+        }
+
+        h5 {
+            font-weight: bolder;
+            margin-left: 25px;
+        }
+
+        .para {
+            margin-left: 5px;
+            font-size: 15px;
+        }
+        #pp{
+            margin-left: 40px;
+        }
+
+        .footer {
+    background-color: #1e3d40;
+    color: #fff;
+    padding: 50px 0 30px;
+    font-family: 'Poppins', sans-serif;
+}
+.footer .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 230px;
+}
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+    color: var(--main-color);
+}
+.social-icons a {
+    font-size: 18px;
+    color: #ddd;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: var(--main-color);
+}
+.footer hr {
+    border-color: #444;
+    margin: 30px 0 15px;
+}
+.footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+    
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="#"><img id="Furni" src="images/Furnicom.png" alt="">Furni</a>
+        </div>
+        <ul class="navigation">
+            <li><a href="Home.html" class="active">home</a></li>
+            <li><a href="Home.html">furniture</a></li>
+            <li><a href="New_Arrival.html">new arrival</a></li>
+            <li><a href="AboutUs.html">about</a></li>
+            <li><a href="ContactUs.html">contact</a></li>
+        </ul>
+        <div class="bars">
+            <img id="bar" src="images/menu.png" alt="">
+        </div>
+    </header>
+    <br>
+    <br><br><br>
+
+    <h1>Center Table</h1>
+   <div id="pp">
+    <p>Elevate your living room with our stylish center tables. Perfect for entertaining & displaying decor. Shop our collection now. #LivingRoomFurniture #CenterTable</p>
+   </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Sheri Center Table – Upgrade Your Living Room.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <p class="card-text"> Sheri Center Table - Upgrade Your Living Room.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs49,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Filo Center Table – Center Tables for the Modern Living Room.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                 
+                  <p class="card-text"> Filo Center Table - Center Tables for the Modern Living Room.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs59,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Fint Center Table – Elegant Living Room Centerpiece.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+               <p class="card-text">Fint Center Table - Elegant Living Room Centerpiece.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs49,999
+                  </span>
+                </div>
+              </div>
+        </article>
+    </section>
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Tor Center Table-Modern Center Table Designs for Living Room.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <p class="card-text">Tor Center Table-Modern Center Table Designs for Living Room.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs64,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Subor Center Table – Elegant Center Table Designs.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                 
+                  <p class="card-text">Subor Center Table – Elegant Center Table Designs.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs59,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Sin Center Table – Elevate Your Living Room Decor.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+               <p class="card-text">Sheri Center Table – Upgrade Your Living Room.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs99,500
+                  </span>
+                </div>
+              </div>
+        </article>
+    </section>
+    <section class="card-section">
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Qint Center Table – The Finishing Touch Your Living Room Needs.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <p class="card-text">Qint Center Table – The Finishing Touch Your Living Room Needs.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs54,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Niro Center Table Designs for Modern Living Rooms.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                 
+                  <p class="card-text"> Niro Center Table - Designs for Modern Living Rooms.</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs39,999
+                  </span>
+                </div>
+              </div>
+        </article>
+        <article>
+            <div class="card" style="width: 18rem;">
+                <img src="E-PROJECT IMAGES/Center Table/Filore Center Table – Contemporary Center Table Designs.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+               <p class="card-text">Filore Center Table – Contemporary Center Table Designs</p>
+                  <a href="#" class="btn btn-primary">Shop Now</a>
+                  <span>
+                    Rs69,999
+                  </span>
+                </div>
+              </div>
+        </article>
+    </section>
+    <div class="container">
+        <h5> Modern Glass Center Table</h5>
+        <div class="para">
+            <p>
+                A stylish centerpiece for your living room, this glass center table adds elegance and transparency to your space.
+                <br><br>
+                Tempered glass top for durability
+                <br><br>
+                Chrome or wooden legs for modern appeal
+                <br><br>
+                Easy to clean and maintain
+                <br><br>
+                Perfect for small or large living areas
+            </p>
+        </div>
+        <h5> Modern Glass Center Table</h5>
+        <div class="para">
+            <p>
+                Enhance your living room with this sleek glass center table that brings a touch of elegance and sophistication. Its clear surface adds a sense of openness, while the sturdy metal or wooden legs ensure long-lasting stability and style.
+            </p>
+        </div>
+        <h5>
+            Classic Wooden Center Table
+        </h5>
+        <div class="para">
+            <p>
+                Crafted from rich, durable wood, this center table combines traditional beauty with practical design. The natural finish and smooth edges make it a warm addition to any room, perfect for both functional use and decorative display.
+            </p>
+        </div>
+        <h5>
+            Multi-Functional Storage Center Table
+        </h5>
+        <div class="para">
+            <p>
+                Designed for modern living, this center table features built-in drawers or shelves for extra storage. Keep your essentials like magazines, remotes, and coasters neatly tucked away while maintaining a clean and stylish space.
+
+
+            </p>
+        </div>
+        <h5>
+            Luxury Marble Top Center Table
+        </h5>
+        <div class="para">
+            <p>
+                Make a statement with this elegant marble-top center table. The polished surface and solid base offer a luxurious appeal that perfectly complements upscale interiors. It's ideal for adding sophistication to any living area.
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+            <div class="footer-col logo-col">
+                <img src="images/Furnicom1.png" alt="Furni Logo" class="footer-logo">
+                <p>Elegant and comfortable furniture to style your home and office. Designed with care, built to last.</p>
+            </div>
+            <div class="footer-col link-col">
+                <h4>Quick Links</h4>
+                <ul>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li><a href="New_Arrival.html">New_Arrival</a></li>
+                <li><a href="#furniture">furniture</a></li>
+                </ul>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; 2025 Furni. All rights reserved.</p>
+        </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+    
+<script>
+
+    function myNav(){
+        let bar = document.getElementById("bar");
+        let nav = document.querySelector(".navigation");
+        bar.onclick = ()=>{
+            if(nav.style.right == "0%") {
+                nav.style.right = "-50%";
+                bar.src = "images/menu.png"
+            } else{
+                nav.style.right = "0%";
+                bar.src = "images/x.png"
+            }
+        }
+    }
+    myNav();
+
+    function myHeader(){
+        let header = document.getElementById("header");
+        let Furni = document.getElementById("Furni")
+        window.addEventListener("scroll",function(){
+            if (window.scrollY > 0){
+                header.classList.add("active")
+                Furni.src = "images/Furnicom1.png"
+            }else{
+                header.classList.remove("active")
+                Furni.src = "images/Furnicom.png"
+            }
+        })
+    }
+    myHeader()
+
+
+
+
+  
+    </script>
+</body>
+</html>
